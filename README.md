@@ -106,18 +106,16 @@ First, confirm that the objects are currently private.
 - Refresh the webpage.
 The expected results should be the **403 Forbidden** message we had earlier. This message demonstrates that your static website is being hosted by Amazon S3 but that the content is private. Hence, we need to make the content public. 
 
-Here are the paraphrased instructions:
-
 1. To make Amazon S3 objects public, you have two options:
    - To make an entire bucket or a specific directory within a bucket public, utilize a bucket policy.
-   - To make individual objects in a bucket public, use an access control list (ACL).
+   - To make individual objects in a bucket public, use an access control list (ACL).<p>
 **Best Practice:** It is **generally safer to make individual objects public to avoid unintentionally making other objects public**. However, if it is certain that the entire bucket does not contain sensitive information, we can can opt for a bucket policy.
 
 3. Now we will proceed to configure the individual objects for public access:
    i. Keep the website tab open and go back to the web browser tab with the Amazon S3 console.
    ii. Select all three objects.
-   iii. From the Actions menu, choose "Make public using ACL."
-![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/a524c02a-91cf-465d-a7f4-0bcfeca1613c)
+   iii. From the Actions menu, choose "Make public using ACL."<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/669f791b-5fd0-4b20-a678-7fc74b6a01a7)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/4804dc0a-fd0f-43a0-909b-689a3efb016b)<p>
 Our static website is now publicly accessible.
 5. Choose Close
@@ -126,13 +124,73 @@ Our static website is now publicly accessible.
 8. Refresh the webpage.<p>
 Now we can see the static website that is being hosted by Amazon S3.
 
+## Securely sharing an object using a presigned URL
+To securely share an object temporarily, generate a presigned URL indicating how long it will remain valid before sharing it with specific users. While the presigned URL is active, anyone possessing it can access the object. It's important to limit the URL's validity and only share it with trusted individuals.
 
+1. We will add a new file
+2. Navigate back to the Amazon S3 console and access the **Objects tab**.
+3. Click on **Upload**.
+4. Select **Add files**.
+5. Choose the file to be added.
+6. Proceed with the **upload process**.
+7. Once uploaded, **close the upload window**.<p>
 
+To maintain privacy, the file added, **new-report.png** file is initially private. Instead of making it public, a presigned URL has been created for access.
 
+8. In the Objects tab, select **new-report.png**.
+9. From the Actions menu, opt for **Share with a presigned URL**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/c32785fb-dcfe-477c-aa95-aeda69b79418)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/75778169-0378-4c81-9715-0ef0744fc7c6)<p>
+11. Configure the expiration time for the **presigned URL**:
+   - Choose Minutes.
+   - Set the Number of minutes to **2**.
+11. **Generate** the presigned URL.
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/7175e1f2-2bb3-48f2-b673-90b90381362a)<p>
+12. Upon creation, **copy the presigned URL from the banner at the top of the page**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/2365d96e-fb17-4841-a25c-6e122cb2f65e)<p>
+13. **Open a new browser tab** and **paste the copied URL into the address bar to view the report** in the web browser<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/44b6c3b7-cc02-4929-87e8-3b6ba3ec5b69)
 
-
-
-
+## Using a bucket policy to secure the bucket
+You want to protect your website files and make sure that no one can delete them. To do this, you apply a
+bucket policy that denies delete privileges on your website files.
+1. We will return to the Amazon S3 console, and choose the **Permissions tab**.
+2. Under **Bucket policy**, choose **Edit**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/4146d7c9-77d3-434b-9a83-0e4b594d9fd6)<p>
+3. Enter the **Bucket policy**
+```
+{
+"Version": "2012-10-17",
+"Id": "MyBucketPolicy",
+"Statement": [
+{
+   "Sid": "BucketPutDelete",
+   "Effect": "Deny",
+   "Principal": "*",
+   "Action": "s3:DeleteObject",
+   "Resource": [
+      "arn:aws:s3:::web-548/index.html",
+      "arn:aws:s3:::web-548/script.js",
+      "arn:aws:s3:::web-548/style.css"
+      ]
+   }
+ ]
+}
+```
+This policy denys everyone from deleting the three files that make the website function.
+4. Save Changes<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/90ef57c5-d28a-4ccb-869c-70b5fa1cfdcc)<p>
+5. Return to the **Object tab**.
+6. Select index.html.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/854276fa-6509-41aa-b4d5-59a859a94783)<p>
+7. Choose **Delete**.
+8. In the Delete objects panel, enter delete to confirm that we want to remove this file.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/0d067e0d-c5a4-4d4e-a8ce-ce7048ec9275)<p>
+9. Choose Delete objects.
+10. Notice that the index.html file is listed in the **Failed to delete pane**.
+This confirms that our **policy is working and preventing the website's files from being deleted**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/89d41308-2c0f-42ff-bc91-28343db8165e)<p>
+11. Choose Close to return to the Objects tab.
 
 
 
