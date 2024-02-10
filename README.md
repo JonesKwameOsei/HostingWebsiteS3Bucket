@@ -1,4 +1,4 @@
-# Creating a Static Website with Amazon Simple Storage Service (Amazon S3)
+ # Creating a Static Website with Amazon Simple Storage Service (Amazon S3)
 
 ## Overview 
 In this project, we will utilise some Amazon Simple Storage Service (Amazon S3) features to build a static website. 
@@ -177,23 +177,35 @@ bucket policy that denies delete privileges on your website files.
  ]
 }
 ```
-This policy denys everyone from deleting the three files that make the website function.
-4. Save Changes<p>
+This policy denys everyone from deleting the three files that make the website function.<p>
+4. Save Changes<p><p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/90ef57c5-d28a-4ccb-869c-70b5fa1cfdcc)<p>
-5. Return to the **Object tab**.
+5. Return to the **Object tab**.<p>
 6. Select index.html.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/854276fa-6509-41aa-b4d5-59a859a94783)<p>
-7. Choose **Delete**.
+7. Choose **Delete**.<p>
 8. In the Delete objects panel, enter delete to confirm that we want to remove this file.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/0d067e0d-c5a4-4d4e-a8ce-ce7048ec9275)<p>
-9. Choose Delete objects.
-10. Notice that the index.html file is listed in the **Failed to delete pane**.
+9. Choose Delete objects.<p>
+10. Notice that the index.html file is listed in the **Failed to delete pane**.<p>
 This confirms that our **policy is working and preventing the website's files from being deleted**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/89d41308-2c0f-42ff-bc91-28343db8165e)<p>
 11. Choose Close to return to the Objects tab.
+## Updating the website
+Although we have configured a policy to prevent deletion of website files, we can still update the website by editing the HTML file and uploading it to the S3 bucket. Amazon S3 is an object storage service, so we must upload the whole file. This action replaces the existing object in your bucket. You cannot edit the contents of an object; instead, you must replace the whole object.
+12. We will edit the HTML file, **index.html**.
+13. Save the file.
+14. Return to the Amazon S3 console, and upload the **index.html** file that you just edited.
+15. Choose index.html, and in the **Actions** menu, choose the **Make public using ACL** option.
+16. Choose **Make public**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/18617d2a-46fa-4f9a-b4b0-feb350880b33)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/0cd67c1d-cab8-477f-b0cb-0fd3f78fb5d4)<p>
 
+17. Return to the web browser tab with the static website, and refresh the page.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/7bcf4e48-8b78-4316-8de5-358b9d245dc6)<p>
 
-
+Our static website is now accessible on the internet. Because it is hosted on Amazon S3, the website has high
+availability and can serve high volumes of traffic without using any servers.
 
 
 
