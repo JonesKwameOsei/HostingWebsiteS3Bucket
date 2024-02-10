@@ -39,9 +39,11 @@ c. For **Bucket Name**, enter **website-123**.
 
 4. For Object Ownership, choose **ACLs enabled**.
 5. Next, select **Bucket ownwer preferred**.<p>
-![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/a99b5ffd-13c4-472e-abd4-60a35e7b3482)<p>
-6. **Block Public Access** settings for this bucket: This means the bucket and its objects will be private denying pucblic access. or our project, we will make it public. We will later secure it.
-7. For **Bucket Versioning**, we will select **Enable**.
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/a99b5ffd-13c4-472e-abd4-60a35e7b3482)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/aa050075-035b-4090-a813-4ba882b3ce3d)
+<p>
+7. **Block Public Access** settings for this bucket: This means the bucket and its objects will be private denying pucblic access. or our project, we will make it public. We will later secure it.
+8. For **Bucket Versioning**, we will select **Enable**.
 **Note:** After enabling this feature, we cannot turn it off once the bucket is created.
 
 
