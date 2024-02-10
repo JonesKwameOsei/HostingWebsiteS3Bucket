@@ -14,8 +14,7 @@ This project seeks to achieve the following:
 
 Our website will look like this at the end of this project:<p>
 
-![S3Static Website (1)](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/751b7765-ead6-460f-a5ba-f2f3b44a72c4)
-
+![S3Static Website](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/3334a1b4-87ee-4893-84cf-3afbc7efdbfb)
 
 ## Creating a bucket in Amazon S3
 Store virtually any amount of data with industry-leading reliability, security, and affordability thanks to s3's object storage solution. Its scalable design ensures flexible data access and management, making it ideal for website and mobile app content and diverse use cases like:
