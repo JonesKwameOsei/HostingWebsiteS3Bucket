@@ -29,6 +29,16 @@ Store virtually any amount of data with industry-leading reliability, security, 
 2. Select **Create bucket**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/48681f07-93b7-4e6d-930e-0904b6a2f11b)
 
+3. General Configuration
+a. AWS Region: Amazon S3 creates buckets in a Region that we specify. **AWS** recommends that to reduce latency, minimize costs, or address regulatory requirements, should choose any AWS Region that is geographically close to users. The region is usually preselected to the region in which you created the account. Nonetheless, this can be changed to meet business requirements.<p>
+b. Bucket type: Select **general purpose** since we need to store and access objects accross multiple Availability Zones. 
+b. For **Bucket Name**, enter **website-123**. 
+**N/B:** Once an S3 bucket name is established, it becomes globally unique, with all AWS accounts sharing the namespace. Hence, if the bucket name we entered exist, we will be prompted to enter a unique bucket name. Following the creation of a bucket, the designated name is reserved exclusively for the account that created it across all AWS Regions. Only upon deletion of the bucket can the name become available for use by other AWS accounts.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/f4261c0d-2c8a-434b-b377-0f4b56766b5c)<p>
+**Optional**, we can copy an existing bucket settings and apply it to our new bucket we are creating.  
+
+
+
 
 
 
