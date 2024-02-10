@@ -63,7 +63,7 @@ We can use tags to manage and our bucket(s), and also optimise cost.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/875aeb28-22cf-4f9a-8d48-bff0be7ae9fa)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/4957e721-8c73-4826-ab7c-37048ff76945)<p>
 ## Configuring the Static Website on Amazon S3
-We will confidure the bucket to host the static website.
+We will configure the bucket to host the static website.
 1. Having chosen the **Property** tab above, scroll to the *Static website **hosting** panel and select **Edit**.
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/8eabcccf-8c3d-4543-9aa8-adcabc12bc09)
 2. Next, **Enable** static website hosting. Then, choose **Host a static website**.
