@@ -78,33 +78,53 @@ We will confidure the bucket to host the static website.
 5. In the Static website hosting panel under Bucket website endpoint, choose the link.
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/3622e0ae-9cce-4fb8-bab6-8b91c3aeb8f6)<p>
 **Note:** This will return a **403 Forbidden** error message. This is because the bucket's permissions have not been configured.<p>
-![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/34ef3dae-9f0e-408e-9592-b632af08a250)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/34ef3dae-9f0e-408e-9592-b632af08a250)<p>
 
 ## Uploading content to the bucket
 Here, we will upload the static files to our bucket. 
 1. Let's go back to the Amazon S3 console, and choose the **Objects** tab.
 2. Choose **Upload**.
-3. Choose **Add files**.
+3. Choose **Add files**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/3596bfa5-b216-4471-bd6f-dee180acb9e5)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/ed9e49f0-92f6-4fbb-8b2d-5d9f0a2ac2f6)<p>
 5. Select files to be uploaded.<p> 
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/3f559ea8-5b07-4791-b98a-6f8bef5f0faf)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/2f7ba7d3-9c43-4ad6-a2b1-b7415d973d89)<p>
 Choose **Upload**.<p>
-![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/8d4e854f-1ab8-4196-8707-c640dac177ff)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/8d4e854f-1ab8-4196-8707-c640dac177ff)<p>
 
 The files are uploaded to the bucket.<p>
-![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/2595115c-8054-4389-923d-946789c00780)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/2595115c-8054-4389-923d-946789c00780)<p>
 
-6. Select **Close**.
-![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/e29996e3-296d-4f44-9a19-12a3d9725694)
+6. Select **Close**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/e29996e3-296d-4f44-9a19-12a3d9725694)<p>
 
+## Grant public access to the objects
+In this task, we will make the uploaded objects publicly accessible so users can view the website.
+First, confirm that the objects are currently private. 
+- Return to the browser tab that showed the 403 Forbidden message.
+- Refresh the webpage.
+The expected results should be the **403 Forbidden** message we had earlier. This message demonstrates that your static website is being hosted by Amazon S3 but that the content is private. Hence, we need to make the content public. 
 
+Here are the paraphrased instructions:
 
+1. To make Amazon S3 objects public, you have two options:
+   - To make an entire bucket or a specific directory within a bucket public, utilize a bucket policy.
+   - To make individual objects in a bucket public, use an access control list (ACL).
+**Best Practice:** It is **generally safer to make individual objects public to avoid unintentionally making other objects public**. However, if it is certain that the entire bucket does not contain sensitive information, we can can opt for a bucket policy.
 
+3. Now we will proceed to configure the individual objects for public access:
+   i. Keep the website tab open and go back to the web browser tab with the Amazon S3 console.
+   ii. Select all three objects.
+   iii. From the Actions menu, choose "Make public using ACL."
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/a524c02a-91cf-465d-a7f4-0bcfeca1613c)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/4804dc0a-fd0f-43a0-909b-689a3efb016b)<p>
+Our static website is now publicly accessible.
+5. Choose Close
 
-
-
+7. Return to the web browser tab that has the 403 Forbidden message.
+8. Refresh the webpage.<p>
+Now we can see the static website that is being hosted by Amazon S3.
 
 
 
