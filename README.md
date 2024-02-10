@@ -32,11 +32,17 @@ Store virtually any amount of data with industry-leading reliability, security, 
 3. General Configuration
 a. AWS Region: Amazon S3 creates buckets in a Region that we specify. **AWS** recommends that to reduce latency, minimize costs, or address regulatory requirements, should choose any AWS Region that is geographically close to users. The region is usually preselected to the region in which you created the account. Nonetheless, this can be changed to meet business requirements.<p>
 b. Bucket type: Select **general purpose** since we need to store and access objects accross multiple Availability Zones. 
-b. For **Bucket Name**, enter **website-123**. 
+c. For **Bucket Name**, enter **website-123**. 
 **N/B:** Once an S3 bucket name is established, it becomes globally unique, with all AWS accounts sharing the namespace. Hence, if the bucket name we entered exist, we will be prompted to enter a unique bucket name. Following the creation of a bucket, the designated name is reserved exclusively for the account that created it across all AWS Regions. Only upon deletion of the bucket can the name become available for use by other AWS accounts.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/f4261c0d-2c8a-434b-b377-0f4b56766b5c)<p>
 **Optionally**, we can copy existing bucket settings and apply it to our new bucket we are creating.  
 
+4. For Object Ownership, choose **ACLs enabled**.
+5. Next, select **Bucket ownwer preferred**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/a99b5ffd-13c4-472e-abd4-60a35e7b3482)<p>
+6. **Block Public Access** settings for this bucket: This means the bucket and its objects will be private denying pucblic access. or our project, we will make it public. We will later secure it.
+7. For **Bucket Versioning**, we will select **Enable**.
+**Note:** After enabling this feature, we cannot turn it off once the bucket is created.
 
 
 
