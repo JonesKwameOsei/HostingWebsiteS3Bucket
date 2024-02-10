@@ -29,15 +29,15 @@ Store virtually any amount of data with industry-leading reliability, security, 
 2. Select **Create bucket**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/48681f07-93b7-4e6d-930e-0904b6a2f11b)
 
-3. General Configuration
-a. AWS Region: Amazon S3 creates buckets in a Region that we specify. **AWS** recommends that to reduce latency, minimize costs, or address regulatory requirements, should choose any AWS Region that is geographically close to users. The region is usually preselected to the region in which you created the account. Nonetheless, this can be changed to meet business requirements.<p>
-b. Bucket type: Select **general purpose** since we need to store and access objects accross multiple Availability Zones. 
-c. For **Bucket Name**, enter **website-123**. 
+3. General Configuration<p>
+a. AWS Region: Amazon S3 creates buckets in a Region that we specify although being a global service. **AWS** recommends that to reduce latency, minimize costs, or address regulatory requirements, should choose any AWS Region that is geographically close to users. The region is usually preselected to the region in which you created the account. Nonetheless, this can be changed to meet business requirements.<p>
+b. Bucket type: Select **general purpose** since we need to store and access objects accross multiple Availability Zones. <p>
+c. For **Bucket Name**, enter **website-123**. <p>
 **N/B:** Once an S3 bucket name is established, it becomes globally unique, with all AWS accounts sharing the namespace. Hence, if the bucket name we entered exist, we will be prompted to enter a unique bucket name. Following the creation of a bucket, the designated name is reserved exclusively for the account that created it across all AWS Regions. Only upon deletion of the bucket can the name become available for use by other AWS accounts.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/f4261c0d-2c8a-434b-b377-0f4b56766b5c)<p>
-**Optionally**, we can copy existing bucket settings and apply it to our new bucket we are creating.  
+**Optionally**, we can copy existing bucket settings and apply it to our new bucket we are creating.  <p>
 
-4. For Object Ownership, choose **ACLs enabled**.
+4. For Object Ownership, choose **ACLs enabled**.<p>
 5. Next, select **Bucket ownwer preferred**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/a99b5ffd-13c4-472e-abd4-60a35e7b3482)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/aa050075-035b-4090-a813-4ba882b3ce3d)<p>
@@ -50,7 +50,7 @@ c. For **Bucket Name**, enter **website-123**.
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/b87d32cc-542e-4180-8ff1-1366afcc5a99)<p>
 9. We will utilise Tags in provisioing a our bucket, choose **Add tag**, and enter the following:
 - Key: Department
-- Value: Marketing
+- Value: Marketing<p>
 We can use tags to manage and our bucket(s), and also optimise cost.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/d0a65f11-3f3e-4cc7-827f-a76fec31e67b)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/9110b046-a684-46a1-aa01-7af145f2b3cc)<p>
