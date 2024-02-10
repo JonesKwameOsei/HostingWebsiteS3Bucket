@@ -190,13 +190,13 @@ This policy denys everyone from deleting the three files that make the website f
 10. Notice that the index.html file is listed in the **Failed to delete pane**.<p>
 This confirms that our **policy is working and preventing the website's files from being deleted**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/89d41308-2c0f-42ff-bc91-28343db8165e)<p>
-11. Choose Close to return to the Objects tab.
+11. Choose Close to return to the Objects tab.<p>
 ## Updating the website
-Although we have configured a policy to prevent deletion of website files, we can still update the website by editing the HTML file and uploading it to the S3 bucket. Amazon S3 is an object storage service, so we must upload the whole file. This action replaces the existing object in your bucket. You cannot edit the contents of an object; instead, you must replace the whole object.
-12. We will edit the HTML file, **index.html**.
-13. Save the file.
-14. Return to the Amazon S3 console, and upload the **index.html** file that you just edited.
-15. Choose index.html, and in the **Actions** menu, choose the **Make public using ACL** option.
+Although we have configured a policy to prevent deletion of website files, we can still update the website by editing the HTML file and uploading it to the S3 bucket. Amazon S3 is an object storage service, so we must upload the whole file. This action replaces the existing object in your bucket. You cannot edit the contents of an object; instead, you must replace the whole object.<p>
+12. We will edit the HTML file, **index.html**.<p>
+13. Save the file.<p>
+14. Return to the Amazon S3 console, and upload the **index.html** file that you just edited.<p>
+15. Choose index.html, and in the **Actions** menu, choose the **Make public using ACL** option.<p>
 16. Choose **Make public**.<p>
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/18617d2a-46fa-4f9a-b4b0-feb350880b33)
 ![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/0cd67c1d-cab8-477f-b0cb-0fd3f78fb5d4)<p>
@@ -206,9 +206,24 @@ Although we have configured a policy to prevent deletion of website files, we ca
 
 Our static website is now accessible on the internet. Because it is hosted on Amazon S3, the website has high
 availability and can serve high volumes of traffic without using any servers.
+## Exploring file versions
+**Bucket versioning** is **disabled** as the **default setting**. With versioning turned off, modifications made to objects are **irreversible**. For instance, when we upload a new version of a file, the old one is replaced, leading to the loss of the original file. Deleting a file results in permanent removal with no option for retrieval.<p>
 
+On the other hand, **enabling versioning ensures that altered and deleted file versions are retained**. While previous versions of objects are not displayed automatically, we can access them through the console or programmatically. By preserving earlier versions of objects, we have the ability to recover them when necessary.<p>
+1. When created the bucket, we **turned on versioning**. In this task, we will view the object versions
+available in the bucket.
+2. Go to the Amazon S3 console, and choose the **Objects tab**.
+3. Choose **Show versions** to turn on bucket versioning.
+4. Review the list of objects in the bucket.
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/3c6d1c88-b1fb-44bb-84b2-a866b35f77b6)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/7f471660-4a84-45a9-b172-f63daba4fa23)<p>
 
-
+- Notice that each file has a **Version ID**. These IDs are **automatically generated** by Amazon S3 when
+versioning is turned on.
+- We should also find two versions of the index.html file because you uploaded a new version of the
+file. The current version is the file that you uploaded when you updated your website.
+## Summary
+In this practical lab, we established a **custom static website** that is **publicly accessible**. We gained insights into **utilising a presigned URL** to share objects temporarily within your bucket. Additionally, we safeguarded the contents in the bucket by **implementing a bucket policy** to inhibit file deletion and **enabled bucket versioning** for potential retrieval of earlier file versions. This hands-on project has exposed us to the **best practices** in sharing objects from S3 bucket. 
 
 
 
