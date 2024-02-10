@@ -22,9 +22,33 @@ Store virtually any amount of data with industry-leading reliability, security, 
 - Cloud-native applications
 - Backups and archiving
 
+1. In the **AWS Management Console, on the Service menu, select or search for **S3**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/1f62dcb5-4625-4673-8bb2-d01f01bf17e6)
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/f267bd74-eb3c-4090-b539-38a50d7b9654)
+
+2. Select **Create bucket**.<p>
+![image](https://github.com/JonesKwameOsei/HostingWebsiteS3Bucket/assets/81886509/48681f07-93b7-4e6d-930e-0904b6a2f11b)
 
 
 
 
 
-> Written with [StackEdit](https://stackedit.io/).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
